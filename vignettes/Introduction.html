@@ -60,7 +60,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 
 <div id="reading-web-access-logs" class="section level1">
 <h1>Reading web access logs</h1>
-<p>R, as a language, is used for analysing pretty much everything from genomic data to financial information. It’s also used to analyse website access logs, and R lacks a good framework for doing that; the URL decoder isn’t vectorised, the file readers don’t have convenient defaults, and good luck normalising IP addresses at scale.</p>
+<p>R, as a language, is used for analysing much everything from genomic data to financial information. It’s also used to analyse website access logs, and R lacks a good framework for doing that; the URL decoder isn’t vectorised, the file readers don’t have convenient defaults, and good luck normalising IP addresses at scale.</p>
 <p>Enter <code>webreadr</code>, which contains convenient wrappers and functions for reading, munging and formatting data from access logs and other sources of web request data.</p>
 <div id="file-reading" class="section level2">
 <h2>File reading</h2>
@@ -86,8 +86,8 @@ data &lt;-<span class="st"> </span><span class="kw">read_combined</span>(<span c
 </div>
 <div id="splitting-combined-fields" class="section level2">
 <h2>Splitting combined fields</h2>
-<p>One of the things you’ll notice about the example above is the “request” field - it contains not only the actual asset requested, but also the HTTP method used and the protocol used. That’s pretty inconvenient for people looking to do something productive with the data.</p>
-<p>Normally you’d split each field out into a list, and then curse and recombine them into a data.frame and hope that doing so didn’t hit R’s memory limit during the “unlist” stage, and it’d take an absolute age. Or, you could just split them up directly into a data frame using <code>split_clf</code>:</p>
+<p>One of the things you’ll notice about the example above is the “request” field - it contains not only the actual asset requested, but also the HTTP method used and the protocol used. That’s inconvenient for some people.</p>
+<p>Normally I’d split each field out into a list, and then curse and recombine them into a data.frame and hope that doing so didn’t hit R’s memory limit during the “unlist” stage, and it’d take an absolute age. Or, you could just split them up directly into a data frame using <code>split_clf</code>:</p>
 <pre class="sourceCode r"><code class="sourceCode r">requests &lt;-<span class="st"> </span><span class="kw">split_clf</span>(data$request)
 <span class="kw">str</span>(requests)</code></pre>
 <pre><code>## 'data.frame':    12 obs. of  3 variables:

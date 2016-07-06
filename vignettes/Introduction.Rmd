@@ -10,7 +10,7 @@ vignette: >
 ---
 
 # Reading web access logs
-R, as a language, is used for analysing pretty much everything from genomic data to financial information. It's also
+R, as a language, is used for analysing much everything from genomic data to financial information. It's also
 used to analyse website access logs, and R lacks a good framework for doing that; the URL decoder isn't vectorised,
 the file readers don't have convenient defaults, and good luck normalising IP addresses at scale.
 
@@ -43,8 +43,7 @@ access logs can be read with <code>read\_s3</code>.
 ## Splitting combined fields
 
 One of the things you'll notice about the example above is the "request" field - it contains not only the actual asset
-requested, but also the HTTP method used and the protocol used. That's pretty inconvenient for people looking to do something
-productive with the data.
+requested, but also the HTTP method used and the protocol used. That's inconvenient for some people.
 
 Normally you'd split each field out into a list, and then curse and recombine them into a data.frame and hope that
 doing so didn't hit R's memory limit during the "unlist" stage, and it'd take an absolute age. Or, you could just split them
